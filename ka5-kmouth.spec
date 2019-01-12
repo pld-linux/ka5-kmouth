@@ -1,14 +1,14 @@
-%define		kdeappsver	18.12.0
+%define		kdeappsver	18.12.1
 %define		qtver		5.9.0
 %define		kaname		kmouth
 Summary:	kmouth
 Name:		ka5-%{kaname}
-Version:	18.12.0
+Version:	18.12.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	738edce3a241ced07467389b31dc3cf2
+# Source0-md5:	c1cc9b9092a6db2741333c2f4efbf14c
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -28,6 +28,7 @@ BuildRequires:	kf5-ki18n-devel >= 5.46.0
 BuildRequires:	kf5-kio-devel >= 5.46.0
 BuildRequires:	kf5-kwidgetsaddons-devel >= 5.46.0
 BuildRequires:	kf5-kxmlgui-devel >= 5.46.0
+BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
@@ -48,14 +49,14 @@ enter. It also has support for user defined phrasebooks.
 install -d build
 cd build
 %cmake \
+	-G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
-%{__make}
+%ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} -C build install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{kaname} --all-name --with-qm
 
@@ -82,3 +83,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kxmlgui5/kmouth/kmouthui.rc
 %{_datadir}/kxmlgui5/kmouth/phrasebookdialogui.rc
 %{_datadir}/metainfo/org.kde.kmouth.appdata.xml
+%lang(ca) %{_mandir}/ca/man1/kmouth.1*
+%lang(da) %{_mandir}/da/man1/kmouth.1*
+%lang(de) %{_mandir}/de/man1/kmouth.1*
+%lang(es) %{_mandir}/es/man1/kmouth.1*
+%lang(et) %{_mandir}/et/man1/kmouth.1*
+%lang(fr) %{_mandir}/fr/man1/kmouth.1*
+%lang(it) %{_mandir}/it/man1/kmouth.1*
+%lang(C) %{_mandir}/man1/kmouth.1*
+%lang(nl) %{_mandir}/nl/man1/kmouth.1*
+%lang(pt) %{_mandir}/pt/man1/kmouth.1*
+%lang(pt_BR) %{_mandir}/pt_BR/man1/kmouth.1*
+%lang(sv) %{_mandir}/sv/man1/kmouth.1*
+%lang(uk) %{_mandir}/uk/man1/kmouth.1*
