@@ -43,6 +43,13 @@ their computer speak, e.g. mutal people or people who have lost their
 voice. It has a text input field and speaks the sentences that you
 enter. It also has support for user defined phrasebooks.
 
+%description -l pl.UTF-8
+KMouth jest programem, który pozwala osobom, które nie mogą mówić,
+by komputer mówił za nich, np, niemowom, lub osobom, które straciły
+głos. Program ma pole tekstowe i wymawia zdania wprowadzane
+z klawiatury. Wspiera też listę wyrażeń definiowanych przez
+użytkownika.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
