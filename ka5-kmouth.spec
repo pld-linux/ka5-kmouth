@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kmouth
 Summary:	kmouth
 Name:		ka5-%{kaname}
-Version:	21.12.3
+Version:	22.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	a33698703e66cdedad0e81de6401023e
+# Source0-md5:	43783779fc71aaf68a15c8cf2180f19c
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -111,6 +111,5 @@ rm -rf $RPM_BUILD_ROOT
 %lang(nl) %{_mandir}/nl/man1/kmouth.1*
 %lang(pt) %{_mandir}/pt/man1/kmouth.1*
 %lang(pt_BR) %{_mandir}/pt_BR/man1/kmouth.1*
-%lang(ru) %{_mandir}/ru/man1/kmouth.1*
 %lang(sv) %{_mandir}/sv/man1/kmouth.1*
 %lang(uk) %{_mandir}/uk/man1/kmouth.1*
