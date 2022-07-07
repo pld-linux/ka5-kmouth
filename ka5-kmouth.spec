@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.04.2
-%define		kframever	5.56.0
-%define		qtver		5.9.0
+%define		kdeappsver	22.04.3
+%define		kframever	5.94.0
+%define		qtver		5.15.2
 %define		kaname		kmouth
 Summary:	kmouth
 Name:		ka5-%{kaname}
-Version:	22.04.2
+Version:	22.04.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ef85a7623ca0b6ab036322cfaf29ddbf
+# Source0-md5:	8c839f05b1fa7f77f0b6bcbc03a8f986
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -47,10 +47,11 @@ voice. It has a text input field and speaks the sentences that you
 enter. It also has support for user defined phrasebooks.
 
 %description -l pl.UTF-8
-KMouth jest programem, który pozwala osobom, które nie mogą mówić, by
-komputer mówił za nich, np, niemowom, lub osobom, które straciły głos.
-Program ma pole tekstowe i wymawia zdania wprowadzane z klawiatury.
-Wspiera też listę wyrażeń definiowanych przez użytkownika.
+KMouth jest programem, który pozwala osobom, które nie mogą
+mówić, by komputer mówił za nich, np, niemowom, lub osobom, które
+straciły głos. Program ma pole tekstowe i wymawia zdania wprowadzane
+z klawiatury. Wspiera też listę wyrażeń definiowanych przez
+użytkownika.
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -111,5 +112,6 @@ rm -rf $RPM_BUILD_ROOT
 %lang(nl) %{_mandir}/nl/man1/kmouth.1*
 %lang(pt) %{_mandir}/pt/man1/kmouth.1*
 %lang(pt_BR) %{_mandir}/pt_BR/man1/kmouth.1*
+%lang(ru) %{_mandir}/ru/man1/kmouth.1.*
 %lang(sv) %{_mandir}/sv/man1/kmouth.1*
 %lang(uk) %{_mandir}/uk/man1/kmouth.1*
